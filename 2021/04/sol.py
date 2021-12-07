@@ -5,7 +5,7 @@ import numpy as np
 
 DEFAULT_FILENAME = 'input'
 
-parser = argparse.ArgumentParser(description="AoC day 03")
+parser = argparse.ArgumentParser(description="AoC day 04")
 parser.add_argument('filename', nargs='?', default=DEFAULT_FILENAME)
 args = parser.parse_args()
 
