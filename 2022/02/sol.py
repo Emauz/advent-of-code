@@ -19,6 +19,8 @@ def duel(them, us) -> int:
         # we won!
         return 2
 
+# what to play against their move if we want a given result
+# moves and results are the same numerical values as above
 def what_to_play(them, result):
     if(result == 0):
         # we want to lose
@@ -34,15 +36,15 @@ def parse():
     games = []
     for line in lines:
         line = line.split()
-        game = (line[0], line[1])
+        first = ord(line[0]) - ord('A')
+        second = ord(line[1]) - ord('X')
+        game = (first, second)
         games.append(game)
     return games
 
 def part1(games):
     total_score = 0
     for (them, us) in games:
-        them = ord(them)-ord('A')
-        us = ord(us)-ord('X')
         result = duel(them, us)
         total_score += result * 3
         total_score += us + 1
@@ -51,8 +53,6 @@ def part1(games):
 def part2(games):
     total_score = 0
     for them, result in games:
-        them = ord(them) - ord('A')
-        result = ord(result) - ord('X')
         our_move = what_to_play(them, result)
         total_score += result * 3
         total_score += our_move + 1
