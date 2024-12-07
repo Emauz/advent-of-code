@@ -2,4 +2,5 @@
 **/obj
 **/target
 **/Cargo.lock
+**/.vscode/
 **/input/
